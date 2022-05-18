@@ -29,3 +29,14 @@ minus.addEventListener("click", () => {
 function showCount() {
     displayCount.innerHTML = countClick;
 }
+
+//
+//
+const randomValue = () =>{
+    let baseColor = "rgba("
+
+    for(let i = 0; i < 3 ; i++){
+        baseColor += Math.floor(Math.random() * 255) + ",";
+    }
+    return baseColor;
+}
