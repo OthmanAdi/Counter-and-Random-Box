@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    body {                          /*circle*/ /*at bottom | left | right*/
+        background: radial-gradient(ellipse at top, #EF9F9F, #827397, #FFF2F2, transparent),radial-gradient(ellipse at top, #92B4EC, #F1F0C0, #947EC3, transparent);
+        height: 100vh;
+    }
+</style>
+
+<body>
+<input type="text" id="myInput" placeholder="...">
+
+<button onclick="putTextInList()">Add New Task</button>
+
+<ul class="myUL">
+    <li>Make homemade ice-cream</li>
+    <li>research discord Bots</li>
+</ul>
+
+<script>
+    function putTextInList() {
+        var inputField = document.getElementById("myInput").value;
+        var newListItem = document.createElement("li");
+        var textNode = document.createTextNode(inputField);
+        newListItem.appendChild(textNode);
+        document.querySelector(".myUL").appendChild(newListItem);
+        document.getElementById("myInput").value = " ";
+    }
+</script>
+
+</body>
+</html>
