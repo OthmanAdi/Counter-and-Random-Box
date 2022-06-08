@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>TodoList with Javascript and Bootstrap</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
-
 <style>
     * {
         padding: 0;
@@ -12,21 +14,60 @@
         text-align: center;
     }
 
-    body {                          /*circle*/ /*at bottom | left | right*/
-        background: radial-gradient(ellipse at top, #EF9F9F, #827397, #FFF2F2, transparent),radial-gradient(ellipse at top, #92B4EC, #F1F0C0, #947EC3, transparent);
+    :root {
+        --c1: #EF9F9F;
+        --c2: #827397;
+        --c3: #FFF2F2;
+        --c4: #92B4EC;
+        --c5: #F1F0C0;
+        --c6: #947EC3;
+    }
+
+    body { /*circle*/ /*at bottom | left | right*/
+        background: radial-gradient(ellipse at top, var(--c1), var(--c2), var(--c3), transparent), radial-gradient(ellipse at top, var(--c4), var(--c5), var(--c6), transparent);
+        background-size: 400% 400%;
+        -webkit-animation: animateWebKitNice 12s ease-in-out infinite;
         height: 100vh;
+    }
+
+    @-webkit-keyframes animateWebKitNice {
+        0% {
+            background-position: 0 50%
+        }
+        50% {
+            background-position: 100% 100%
+        }
+        100% {
+            background-position: 0 50%
+        }
+    }
+
+    .container {
+        height: 100vh;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .btn {
+        grid-row: 4 / span 1;
+    }
+
+    .btn:hover {
+        border: 10px #EF9F9F double;
     }
 </style>
 
 <body>
-<input type="text" id="myInput" placeholder="...">
+<div class="container">
+    <input type="text" id="myInput" placeholder="...">
 
-<button onclick="putTextInList()">Add New Task</button>
+    <button class="btn btn-outline-dark" onclick="putTextInList()">Add New Task</button>
 
-<ul class="myUL">
-    <li>Make homemade ice-cream</li>
-    <li>research discord Bots</li>
-</ul>
+    <ul class="myUL">
+        <li>Make homemade ice-cream</li>
+        <li>research discord Bots</li>
+    </ul>
+</div>
 
 <script>
     function putTextInList() {
