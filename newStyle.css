@@ -1,0 +1,37 @@
+* {
+    padding: 0; /*kein Innen abstand*/
+    margin: 0; /*kein Außen abstand*/
+}
+
+.twoDim_css_effect {
+    --height: 1.5em;
+    color: #000000;
+    line-height: var(--height);
+    text-shadow: 0 0 var(--t, var(--height)) #FFF2F2, 0 0 var(--c) #000000;
+    background: linear-gradient(#1095c1, #000000) bottom/100% var(--d, 0) no-repeat;
+    transition: 0.5s;
+}
+
+:root {
+    --d: 100%;
+    --c: #000000;
+    --t: 0;
+}
+
+body {
+    height: 100vh;
+    display: grid; /*setzt der regel von ausrichtung*/
+    place-content: center; /*setzte-inhalt*/
+}
+
+h3 {
+    font-family: system-ui, sans-serif;
+    font-size: 3em;
+    padding: 1em;
+}
+
+h3:hover{
+    transition: text-shadow 10s;
+    color: red;
+}
+
