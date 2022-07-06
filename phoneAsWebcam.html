@@ -34,12 +34,31 @@
         const element = document.querySelector(elementSelector);
 
         const constraints = {
-            video: { facingMode: facingMode },
+            video: {facingMode: facingMode},
         };
 
         element.onclick = function () {
             navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess).catch(handleError);
         };
     }
+
+    capture(".captureFront", "user");
+    capture(".captureBack", "environment");
+
+    const fullscreenButton = document.querySelector(".fullscreen");
+
+    fullscreenButton.onclick = function () {
+        if (video.webkitEnterFullScreen) {
+
+            video.webkitEnterFullScreen(); // Mobile Safari
+
+        } else if (video.requestFullscreen) {
+
+        } else if (video.webkitRequestFullscreen) {
+
+        } else if (video.msRequestFullscreen) {
+
+        }
+    };
 </script>
 </html>

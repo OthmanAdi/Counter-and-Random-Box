@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nav bar site</title>
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+</head>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    body {
+        height: 100vh;
+    }
+
+    .navBar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        box-shadow: 0 8px 25px black;
+        border-radius: 10px;
+    }
+
+    .navBar .container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .navBar ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+    }
+
+    li {
+        padding-right: 10px;
+    }
+
+</style>
+
+<body>
+
+<nav class="navBar">
+    <div class="container">
+        <h1>Website Name</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>CameraFeed</li>
+            <li>PhoneAsWebCam</li>
+            <li>TodoList</li>
+            <li>VotingSystem</li>
+            <li>NavBar</li>
+        </ul>
+    </div>
+    <button onclick="party.confetti(this)">testing Party.JS</button>
+    <button onclick="party.sparkles(this)">testing Party.JS</button>
+</nav>
+
+
+</body>
+</html>
